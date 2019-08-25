@@ -1,0 +1,20 @@
+.mobile-menu {
+	max-width: 450px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	padding: 10px 20px;
+	border: 1px solid #000;
+	.navbar_menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.navbar_menu--item {
+		margin-bottom: 20px;
+		text-align: center;
+		cursor: pointer;
+	}
+}

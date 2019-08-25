@@ -1,0 +1,59 @@
+$break-large: 1200px;
+.categoriesCard {
+	min-width: 30%;
+	height: 240px;
+	border: 1px solid black;
+	flex: 1;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 20px 20px 20px;
+	cursor: pointer;
+	@media screen and (max-width: $break-large) {
+		& {
+			height: 320px;
+		}
+	}
+	&:hover {
+		.categories_content {
+			opacity: 1;
+		}
+		.image {
+			transform: scale(1.2);
+		}
+	}
+	.categoriesCard_imageContainer {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+		border: 0;
+		.image {
+			width: 100%;
+			height: 100%;
+			transition: all 1.6s ease-in-out;
+		}
+	}
+	.categories_content {
+		padding: 10px 20px;
+		border: 1px solid black;
+		background-color: #fff;
+		opacity: 0.6;
+		z-index: 10;
+		text-align: center;
+
+		h1 {
+			font-weight: 400;
+			color: black;
+			opacity: 1;
+			font-size: 1rem;
+		}
+		p {
+			font-size: 0.8rem;
+		}
+	}
+}
+.big {
+	height: 320px;
+}
