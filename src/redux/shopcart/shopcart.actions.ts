@@ -1,6 +1,6 @@
 import {Dispatch} from 'redux'
 import {product} from '../product/product.types'
-import {togglecartAction,disablecartAction,activatecartAction, hidecartAction, addProductToCartAction} from './shopcart.types'
+import {togglecartAction,disablecartAction,activatecartAction, hidecartAction, addProductToCartAction, removeProductFromCartAction, REMOVE_PRODUCT_FROM_CART} from './shopcart.types'
 import {TOGGLE_CART,DISABLE_CART,ACTIVATE_CART,HIDE_CART, ADD_PRODUCT_TO_CART,} from './shopcart.types'
 export const  toggleCart = () => (dispatch :Dispatch) => {
     dispatch<togglecartAction>({
@@ -25,6 +25,12 @@ export const  activateCart = () => (dispatch :Dispatch) => {
 export const addProductToCard = (product:product) =>(dispatch:Dispatch) =>{
     dispatch<addProductToCartAction>({
         type:ADD_PRODUCT_TO_CART,
+        payload:product
+    })
+}
+export const removeProductFromCard = (product:product) =>(dispatch:Dispatch) =>{
+    dispatch<removeProductFromCartAction>({
+        type:REMOVE_PRODUCT_FROM_CART,
         payload:product
     })
 }

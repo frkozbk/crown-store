@@ -21,3 +21,22 @@ body {
 		padding: 10px 20px;
 	}
 }
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #000;
+}
+::-webkit-scrollbar-button {
+	display: none;
+}

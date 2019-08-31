@@ -1,0 +1,42 @@
+.shoppingCartItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px;
+	border: 1px solid #000;
+	padding: 2px;
+	img {
+		width: 75px;
+		height: 75px;
+		margin-right: 5px;
+	}
+	.shoppingCartItem_label {
+		display: flex;
+		align-items: center;
+		flex: 1;
+		justify-content: space-between;
+		h1 {
+			font-size: 18px;
+			flex: 3;
+			text-align: center;
+		}
+		.shoppingCarItem_total {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			flex: 3;
+			button {
+				width: 30px;
+				padding: 7px 5px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+	.totalPrice {
+		min-width: 45px;
+		margin-right: 5px;
+		text-align: right;
+	}
+}

@@ -1,4 +1,4 @@
-import React,{useEffect,useState,useMemo} from 'react'
+import React,{useEffect,useState} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
@@ -17,11 +17,12 @@ import shoppingCart from './shop.svg'
 import ShoppingCart from '../ShoppingCart/ShoppingCart.component';
 import { toggleCart, disableCart, activateCart, hideCart } from '../../redux/shopcart/shopcart.actions';
 import MobileMenu from '../../Utils/MobileMenu/MobileMenu.component';
+import { _product } from '../../redux/shopcart/shopcart.types';
 
 type Props = LinkStateProps & LinkDispatchProps
 
 const Navbar = (props:Props) => {
-    const {userLoggedIn,toggleUser,toggleCart,hideCart} = props
+    const {userLoggedIn,toggleUser,toggleCart,hideCart,products} = props
     const [showMobileMenu,setShowMobileMenu] =useState(false)
     const windowWitdh=useWindowWidth()
     useEffect(()=>{
@@ -62,7 +63,7 @@ const Navbar = (props:Props) => {
                 <li className="navbar_menu--item" onClick={()=>handleSignInOrOut()}>{userLoggedIn? 'SIGN OUT' : 'SIGN IN'}</li>
                 {userLoggedIn ? (
                     <li className="navbar_menu--item" onClick={()=>handleShoppingCartClick()}>
-                        <span className="shoppingCard"><img src={shoppingCart} alt="shopping-cart"/><p>1</p></span>
+                        <span className="shoppingCard"><img src={shoppingCart} alt="shopping-cart"/><p>{products.length}</p></span>
                     </li>
                 ): null}
             </ul>
@@ -76,7 +77,8 @@ const Navbar = (props:Props) => {
 interface LinkStateProps {
     userLoggedIn:boolean;
     disabled:boolean;
-    showCart:boolean
+    showCart:boolean;
+    products:_product[];
 }
 interface LinkDispatchProps{
     toggleUser :() => void;
@@ -89,7 +91,8 @@ interface LinkDispatchProps{
 const mapStateToProps  = (state:AppState)=>({
     userLoggedIn:state.user.isLoggedIn,
     disabled:state.cart.disabled,
-    showCart:state.cart.showCart
+    showCart:state.cart.showCart,
+    products:state.cart.products,
 })
 
 const mapDispatchToProps = (dispatch:ThunkDispatch<any,any,AppActions>):LinkDispatchProps => ({

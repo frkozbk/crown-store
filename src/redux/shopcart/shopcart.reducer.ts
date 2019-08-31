@@ -1,4 +1,4 @@
-import {ShopCartInterface,ShopCartTypes, ADD_PRODUCT_TO_CART, _product,} from './shopcart.types'
+import {ShopCartInterface,ShopCartTypes, ADD_PRODUCT_TO_CART, _product, REMOVE_PRODUCT_FROM_CART,} from './shopcart.types'
 import {TOGGLE_CART,DISABLE_CART,ACTIVATE_CART, HIDE_CART, } from './shopcart.types'
 const INITIAL_STATE:ShopCartInterface={
     disabled:false,
@@ -31,6 +31,17 @@ export default(state=INITIAL_STATE,action:ShopCartTypes) => {
             else{
                 return {...state,products:[...state.products,{...action.payload,total:1}]}
             }
+        }
+        case REMOVE_PRODUCT_FROM_CART:{
+                const newProductsArray=state.products.map((product:_product) =>{
+                    if(product.id===action.payload.id){
+                        return {...product,total:product.total-1}
+                    }
+                    return {...product}
+                    }).filter(product=>{
+                        return product.total!==0
+                    });
+                    return {...state,products:newProductsArray}
         }
         default:
             return state;

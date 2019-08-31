@@ -10,6 +10,24 @@
 	display: flex;
 	flex-direction: column;
 	padding: 20px 20px;
+	.shoppingCart_list {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		margin-bottom: 10px;
+		overflow-y: scroll;
+		padding-right: 5px;
+		h1 {
+			text-align: center;
+		}
+	}
+	.shoppingCart_total {
+		justify-self: end;
+		align-self: flex-end;
+		margin-top: auto;
+		margin-bottom: 5px;
+		padding-right: 10px;
+	}
 	button {
 		margin-top: auto;
 		border: 1px solid #000;

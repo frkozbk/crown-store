@@ -23,12 +23,12 @@ const categories:categorie[]=[
     },
     {
         imgLink:'https://images.unsplash.com/photo-1528977695568-bd5e5069eb61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-        header:'men',
+        header:'mens',
         big:true
     },
     {
         imgLink:'https://images.unsplash.com/photo-1476493279419-b785d41e38d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-        header:'women',
+        header:'womens',
         big:true
     }
 

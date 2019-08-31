@@ -16,7 +16,11 @@ export interface clearProductsAction{
 }
 
 export interface products{
-    hats:product[]
+    hats:product[];
+    jackets:product[];
+    sneakers:product[];
+    womens:product[];
+    mens:product[];
 }
 
 export type ProductActionTypes = fetchProductsAction | clearProductsAction

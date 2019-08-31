@@ -35,7 +35,7 @@ const Categorie= (props:Props ) => {
     }
     return (
         <>
-        <h1>Hats</h1>
+        <h1 className="header">Hats</h1>
         <div className="categorie_container">
             {renderProducts(products)}
         </div>
